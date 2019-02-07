@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/login.js"></script>
+</head>
+<body>
+	<!-- Image and text -->
+<nav class="boxtransition navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  	<a class="navbar-brand" href="#"><img src="../images/images.png" width="60" height="40" class="d-inline-block align-top" alt="">
+    EVENTHub
+	</a>
+ 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+  	<div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+	    <ul class="navbar-nav mt-2 mt-lg-0" >
+	      <li class="nav-item active">
+        		<a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+		 	</li>
+		 	<li class="nav-item">
+		    	<a class="nav-link" href="#">Browse Events</a>
+		  	</li>
+		  	<li class="nav-item">
+		    	<a class="nav-link" href="#">Help</a>
+		  	</li>
+		  	<li class="nav-item">
+		    	<a class="nav-link" href="#">About Us</a>
+		  	</li>
+		</ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+  	</div>
+</nav>
+
+<div class="container-fluid bg">
+    <div class="row">
+    	
+    	<div class="col-md-4 col-sm-4 col-xs-12"></div>
+	    <div class="col-md-4 col-sm-4 col-xs-12">
+	    	<div class="welcometag1"> <p id="welcometag">Welcome</p> </div>
+	    	<div class="subtitle"><p> Please enter your username and password </p> </div>
+		    <form action="" class="form-container" onsubmit="event.preventDefault();">
+			  <div class="form-group">
+			    <label>Email</label>
+			    <input type="email" class="form-control boxtransition" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			    <span id="emailvaliderror"></span>
+			  </div>
+			  <div class="form-group">
+			    <label>Password</label>
+			    <input type="password" class="form-control boxtransition" id="InputPassword" placeholder="Password">
+			    <span id="passwordvaliderror"></span>
+			  </div>
+			  <div class="form-group form-check">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label">Remember me</label>
+			  </div>
+			  <button type="submit" class="eds-btn eds-btn--submit eds-btn--fill eds-btn--block boxtransition" id="login" onclick="validateLogin()">Login</button>
+			</form>
+	    </div>
+	    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+	</div>
+</div>
+<div class="container-forgot">
+	<a class="forgot-password" href="#">Forgot Password?</a>
+</div>
+
+<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>

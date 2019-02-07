@@ -1,0 +1,326 @@
+html{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.bg{
+	margin-top: 5%
+}
+.eds-btn.eds-btn--block {
+    display: block;
+    width: 100%;
+    background-color: #d81717;
+    color: #ffffff;
+}
+
+.eds-btn--fill, .eds-btn--fill:focus{
+    color: #fff;
+    color: var(--eds-inverse-primary-brand,#fff);
+    fill: #fff;
+    fill: var(--eds-inverse-primary-brand,#fff);
+    
+}
+.eds-btn--fill:hover {
+    background-color: #0ece38;
+    color: #000000;
+    -webkit-box-shadow: 15px 16px 5px -9px rgba(224,215,215,1);
+	-moz-box-shadow: 15px 16px 5px -9px rgba(224,215,215,1);
+	box-shadow: 15px 16px 5px -9px rgba(224,215,215,1);
+}
+
+.eds-btn {
+    position: relative;
+    height: 44px;
+    padding: 0 30px 1px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 600;
+    color: #39364f;
+    color: var(--eds-ui-800,#39364f);
+    fill: #39364f;
+    fill: var(--eds-ui-800,#39364f);
+    background: transparent;
+    border: 2px solid #a9a8b3;
+    border: 2px solid var(--eds-ui-500,#a9a8b3);
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+}
+
+.navbar{
+	font-weight: 600;
+	color: white;
+}
+
+.nav{
+	justify-content: flex-end;
+}
+
+.forgot-password{
+	position: relative;
+    background: none;
+    border: none;
+}
+
+.container-forgot{
+	text-align: center;
+}
+
+.container-welcome{
+	text-align: center;
+	font-family: 
+}
+
+.welcometag1{
+	font-family: "Times New Roman", Times, serif, monospace;
+	font-weight: 60;
+	font-style: bold;
+	font-size: 50px;
+	font-variant: small-caps;
+	text-align: center;
+	color: #d81717;
+	height: 60px;
+	margin-bottom: 10px;
+}
+
+
+
+.footer{
+	background-color: black;
+	text-align: center;
+	padding: 0.2em;
+    position: absolute;
+    width: 100%;
+    /* font-family: "Times New Roman", Times, serif, monospace; */
+    height: 35px;
+    color: white;
+    margin-top: 1em;
+}
+
+.subtitle{
+	font-family: "Times New Roman", Times, serif, monospace;
+	text-align: center;
+}
+
+#rowalign{
+	display: block;
+	text-align: center;
+	justify-content: center;
+}
+
+#text-center, .text-center{
+	text-align: center;
+}
+
+#emailvaliderror, #passwordvaliderror,
+#errorfname, #errorlname, #errorgender, #erroremail,
+#errornumber, #erroruniv, #errorbranch, #description {
+	color: red;
+}
+
+#imagewidth{
+	width: 115%;
+}
+
+.bar-width{
+	width: 3em;
+}
+@media only screen and (min-width: 320px) {
+  .texttitle{
+  	display: none;
+  }
+  .imagetitle{
+  	display: inline-block;
+    width: 25%;
+  }
+  .imagehelptitle{
+  	display: inline-block;
+  }
+  .texthelptitle{
+  	display: none;
+  }
+  .textabouttitle{
+  	display: none;
+  }
+}
+@media only screen and (min-width: 990px) {
+  .imagetitle{
+  	display: none;
+  }
+  .texttitle{
+  	display: inline-block;
+  }
+  .imagehelptitle{
+  	display: none;
+  }
+  .texthelptitle{
+  	display: inline-block;
+  }
+}
+
+#mbottom{
+	margin-bottom: 0;
+}
+
+.row{
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.btn{
+	text-align: center !important;
+}
+
+.general_information{
+	font-family: "Time New Roman";
+	font-size: 1.25em;
+	font-weight: bold;
+	text-align: left;
+	color: #d81717;
+	width: 320px;
+	margin-top: 8%;
+}
+
+.imgadjust{
+	padding-left: 3em;
+    margin-top: 6%;
+    margin-left: 4%;
+}
+
+.info{
+	padding-top: 0.5em;
+}
+
+.padding{
+	padding: 1em;
+}
+
+.emptyimage{
+	margin-left: 4.5em;
+}
+
+.padleft{
+	padding-left: 3em;
+	margin-bottom: 5em;
+}
+
+.footer_style {
+   	background-color: black;
+   	color: #fff;
+   	height: 40px;
+   	width: 100%;
+   	position: absolute;
+   	left: 0em;
+   	bottom: 0em;
+   	text-align: center;
+   	padding-top: 0.50em;
+}
+
+.wrapper{
+	min-height: 100%;
+	position: relative;
+}
+
+.general_edit{
+	font-family: "Time New Roman";
+	font-size: 1.65em;
+	font-weight: bold;
+	text-align: left;
+	color: #d81717;
+	width: 320px;
+}
+
+.padimage{
+	padding: 1em;
+    margin-left: 4em;
+}
+
+.padbottom{
+	padding-bottom: 3em;
+}
+
+.socialimg{
+	width: 2em;
+	float: left;
+}
+
+.socialfbbutton{
+	width: 10em;
+	background-color:  #436fcc;
+	color: white;
+	border-color: #000000;
+}
+
+.socialgmailbutton{
+	width: 10em;
+	background-color:  #ed2f17;
+	color: white;
+	border-color: #000000;
+}
+
+.errorlname, .description{
+	color: red;
+}
+
+.map-container-2{
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+.map-container-2 iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+.socialimg_event{
+	width: 3em;
+    margin: 0.50em;
+}
+
+.pl6{
+	padding-left: 6em;
+}
+
+.pt2{
+	padding-top: 2em;
+}
+
+.ml{
+	margin-left: 1.25em;
+}
+
+.pl4{
+	padding-left: 4em;
+}
+
+.pt1{
+	padding-top: 1em;
+}
+
+.btnposition{
+    position: absolute;
+    bottom: 20px;
+    justify-content: center;
+}
+
+.boxtransition{
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.boxtransition:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}

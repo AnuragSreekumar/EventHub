@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Edit Profile</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/login.js"></script>
+</head>
+<body>
+	<!-- Image and text -->
+<div class="wrapper">	
+	<nav class="boxtransition navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+	  	<a class="navbar-brand" href="#"><img src="../images/images.png" width="60" height="40" class="d-inline-block align-top" alt="">
+	    EVENTHub
+		</a>
+	 	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  	</button> -->
+	  	<div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+		    <ul class="navbar-nav mt-2 mt-lg-0" >
+			 	<li class="nav-item">
+			    	<a class="nav-link" href="#">Browse Events</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" href="#">Help</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" href="#">About Us</a>
+			  	</li>
+			</ul>
+	  	</div>
+	  	<div>
+	    <ul class="navbar-nav mt-2 mt-lg-0 bar-width">
+			    <li class="nav-item dropdown">
+		            <a class="nav-link" href="#" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		               <img style="display:inline-block;"src="../images/man.svg" alt="userprofile" id="imagewidth">
+		            </a>
+		            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+		              <a class="dropdown-item" href="User_profile.html">Profile</a>
+		              <a class="dropdown-item" href="#">Settings</a>
+		              <div class="dropdown-divider"></div>
+		              <a class="dropdown-item" href="#">Log out</a>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+	</nav>
+	<div class="maindiv padbottom">
+    <form action="" id="profileedit">
+    	<div class="general_edit">
+	  		<span class="h4 general_edit"> Profile </span>
+	  	</div>
+        <div class="row">
+            <div class="col-sm-5 container-forgot">
+                <div class="padding">
+                    <img src="../images/user.svg" style="width:40%;" class="border" alt="userimage" />
+                </div>
+                <div>
+                    <input type="file" class="padimage" name="chooseimage"/>
+                </div>
+               
+               <div class="container-forgot">
+                    <button type="button" class="btn socialfbbutton" onclick="load_profile()">
+                        <img class="socialimg" src="../images/fb.svg" alt="Facebook"><span class="h6 vm">Facebook</span></button>
+                    <button type="button" class="btn socialgmailbutton" onclick="load_profile()">
+                        <img class="socialimg" src="../images/gmail.svg" alt="Google"><span class="h6 vm">Google</span></button>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div>
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" class="form-control" name="firstname">
+                    <span id="errorfname"></span>
+                </div>
+                <div>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" class="form-control" name="lastname">
+                    <span id="errorlname"></span>
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" class="form-control">
+                        <option>Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                     <span id="errorgender"></span>
+                </div>
+                <div>
+                    <label for="email">Email ID</label>
+                    <input type="text" id="email" class="form-control" name="emailid">
+                    <span id="erroremail"></span>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" class="form-control" name="phonenumber">
+                    <span id="errornumber"></span>
+                </div>
+                <div>
+                    <label for="university">University</label>
+                    <input type="text" id="university" class="form-control" name="university">
+                    <span id="erroruniv"></span>
+                </div>
+                <div>
+                    <label for="branch">Branch</label>
+                    <input type="text" id="branch" class="form-control" name="branch">
+                    <span id="errorbranch"></span>
+                </div>  
+            </div>
+        </div>
+        <div class="padding container-forgot">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" style="width: 10em;" onclick="validateForm()">Save</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+	<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>    
+</div>
+
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
