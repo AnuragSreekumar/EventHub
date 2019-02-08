@@ -45,7 +45,7 @@ body{
     fill: #39364f;
     fill: var(--eds-ui-800,#39364f);
     background: transparent;
-    border: 2px solid #a9a8b3;
+   	
     border: 2px solid var(--eds-ui-500,#a9a8b3);
     border-radius: 4px;
     cursor: pointer;
@@ -131,7 +131,7 @@ body{
 .bar-width{
 	width: 3em;
 }
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 150px) {
   .texttitle{
   	display: none;
   }
@@ -148,6 +148,21 @@ body{
   .textabouttitle{
   	display: none;
   }
+  .priceview{
+  	display: inline-block;
+  }
+  .cardright{
+  	display: none;
+  }
+  .priceviewincard{
+  	display: none;
+  }
+  .infohider{
+  	display: inline-block;
+  }
+  .btnposition{
+ 	 width: 70%;
+}
 }
 @media only screen and (min-width: 990px) {
   .imagetitle{
@@ -161,6 +176,18 @@ body{
   }
   .texthelptitle{
   	display: inline-block;
+  }
+  .priceview{
+  	display: none;
+  }
+  .cardright{
+  	display: inline-block;
+  }
+  .priceviewincard{
+  	display: inline-block;
+  }
+  .infohider{
+  	display: none;
   }
 }
 
@@ -308,9 +335,12 @@ body{
 }
 
 .btnposition{
-    position: absolute;
-    bottom: 20px;
-    justify-content: center;
+    position: initial;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+    max-width: 320px;
+    
 }
 
 .boxtransition{
@@ -323,4 +353,93 @@ body{
     -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+.maindiv1{
+	height: 100%;
+	margin-top: -2em;
+}
+
+/*<!-- Adding for event description-->*/
+
+.listing-panel-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.paddingtext{
+	padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.071em;
+    padding-right: 1.071em;
+    display: block;
+}
+
+.paddinginline{
+	display: inline-block;
+	position: absolute;
+}
+
+.date{
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 1.25em;
+	letter-spacing: 1px;
+}
+
+.month{
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 15px;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+}
+
+.paddinginlinetext{
+	margin-left: 60px;
+	display: inline-block;
+	padding-top: 0;
+}
+
+.heading1{
+	max-height: 125px;
+	-webkit-line-clamp: 4;
+	font-size: 17px;
+	line-height: 20px;
+	padding-bottom: 2px;
+	display: block;
+	display: -webkit-box;
+	max-height: 125;
+	margin: 0 auto;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #1E0A3C;
+	font-weight: 600;
+	font-size: 20px;
+	/* line-height: 21px; */
+	letter-spacing: .5px;
+	word-break: break-word;
+}
+
+.mt{
+	margin-top: 0.5em;
+}
+
+.tal{
+	text-align: left;
+}
+
+.buttonalignright{
+	justify-content: flex-end;
+    display: flex;
+}
+
+@media only screen and (min-width: 150px) {
+
+.btnposition{
+ 	 width: 70%;
+}
 }
