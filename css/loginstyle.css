@@ -437,6 +437,30 @@ body{
     display: flex;
 }
 
+
+.navbar .nav-icon, .navbar-brand-icon {
+	display: none;
+}
+@media only screen and (max-width: 991px) {
+.navbar .nav-icon {
+	font-size: 30px;
+	display: block;
+    padding: 4px 25px;
+    color: #efeded;
+}
+.navbar-brand-icon {
+	display: block;
+	padding-right: 10px;
+}
+.navbar-brand {
+	display: none;
+}
+
+.fab  {
+    border-right: 1px solid #7e7373;
+}
+}
+
 @media only screen and (min-width: 150px) {
 
 .btnposition{

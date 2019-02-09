@@ -5,8 +5,9 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/login.js"></script>
+    <script src="../js/formvalidation_js.js"></script>
 </head>
 <body>
 	<!-- Image and text -->
@@ -15,6 +16,10 @@
 	  	<a class="navbar-brand" href="#"><img src="../images/images.png" width="60" height="40" class="d-inline-block align-top" alt="">
 	    EVENTHub
 		</a>
+        <a class="navbar-brand-icon" href="#"><img src="../images/images.png" width="40" height="30" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="fab fa-searchengin nav-icon" href="#"></a>
+        <a class="fas fa-question-circle nav-icon" href="#"></a>
 	 	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  	</button> -->
@@ -35,7 +40,7 @@
 	    <ul class="navbar-nav mt-2 mt-lg-0 bar-width">
 			    <li class="nav-item dropdown">
 		            <a class="nav-link" href="#" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		               <img style="display:inline-block;"src="../images/man.svg" alt="userprofile" id="imagewidth">
+		               <img style="display:inline-block;" src="../images/man.svg" alt="userprofile" id="imagewidth">
 		            </a>
 		            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
 		              <a class="dropdown-item" href="User_profile.html">Profile</a>
@@ -48,7 +53,7 @@
 		</div>
 	</nav>
 	<div class="maindiv padbottom">
-    <form action="" id="profileedit">
+    <form id="profileedit" name="profile">
     	<div class="general_edit">
 	  		<span class="h4 general_edit"> Profile </span>
 	  	</div>
@@ -70,18 +75,18 @@
             </div>
             <div class="col-md-5">
                 <div>
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" class="form-control" name="firstname">
+                    <label for="firstname">First Name</label><span class="description">*</span>
+                    <input type="text" id="firstname" class="form-control" name="firstname" onblur="validatefname()">
                     <span id="errorfname"></span>
                 </div>
                 <div>
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" class="form-control" name="lastname">
+                    <label for="lastname">Last Name</label><span class="description">*</span>
+                    <input type="text" id="lastname" class="form-control" name="lastname" onblur="validatelname()">
                     <span id="errorlname"></span>
                 </div>
                 <div>
-                    <label for="gender">Gender</label>
-                    <select id="gender" class="form-control">
+                    <label for="gender">Gender</label><span class="description">*</span>
+                    <select id="gender" class="form-control" onblur="validategender()">
                         <option>Select</option>
                         <option>Male</option>
                         <option>Female</option>
@@ -91,32 +96,32 @@
                      <span id="errorgender"></span>
                 </div>
                 <div>
-                    <label for="email">Email ID</label>
-                    <input type="text" id="email" class="form-control" name="emailid">
+                    <label for="email">Email ID</label><span class="description">*</span>
+                    <input type="text" id="email" class="form-control" name="emailid" onblur="validatemail()">
                     <span id="erroremail"></span>
                 </div>
                 <div>
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" class="form-control" name="phonenumber">
+                    <label for="phone">Phone Number</label><span class="description">*</span>
+                    <input type="text" id="phone" class="form-control" name="phonenumber" maxlength="10" onblur="validatenum()">
                     <span id="errornumber"></span>
                 </div>
                 <div>
-                    <label for="university">University</label>
-                    <input type="text" id="university" class="form-control" name="university">
+                    <label for="university">University</label><span class="description">*</span>
+                    <input type="text" id="university" class="form-control" name="university" onblur="validateuniv()">
                     <span id="erroruniv"></span>
                 </div>
                 <div>
-                    <label for="branch">Branch</label>
-                    <input type="text" id="branch" class="form-control" name="branch">
+                    <label for="branch">Branch</label><span class="description">*</span>
+                    <input type="text" id="branch" class="form-control" name="branch" onblur="validatebranch()">
                     <span id="errorbranch"></span>
                 </div>  
             </div>
         </div>
         <div class="padding container-forgot">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" style="width: 10em;" onclick="validateForm()">Save</button>
+            <button type="button" class="btn btn-success" id="submitbutton" style="width: 10em;" onclick="validateForm()">Save</button>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="SuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -126,16 +131,16 @@
                 </button>
               </div>
               <div class="modal-body">
-                ...
+                Your information has been successfully.
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
               </div>
             </div>
           </div>
         </div>
     </form>
+    </div>
 	<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>    
 </div>
 
