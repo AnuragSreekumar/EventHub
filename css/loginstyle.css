@@ -20,11 +20,9 @@ body{
 
 .eds-btn--fill, .eds-btn--fill:focus{
     color: #fff;
-    color: var(--eds-inverse-primary-brand,#fff);
-    fill: #fff;
-    fill: var(--eds-inverse-primary-brand,#fff);
-    
+    fill: #fff;    
 }
+
 .eds-btn--fill:hover {
     background-color: #0ece38;
     color: #000000;
@@ -41,12 +39,9 @@ body{
     line-height: 24px;
     font-weight: 600;
     color: #39364f;
-    color: var(--eds-ui-800,#39364f);
     fill: #39364f;
-    fill: var(--eds-ui-800,#39364f);
     background: transparent;
-   	
-    border: 2px solid var(--eds-ui-500,#a9a8b3);
+    border: 2px solid;
     border-radius: 4px;
     cursor: pointer;
     -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
@@ -74,13 +69,10 @@ body{
 
 .container-welcome{
 	text-align: center;
-	font-family: 
 }
 
 .welcometag1{
 	font-family: "Times New Roman", Times, serif, monospace;
-	font-weight: 60;
-	font-style: bold;
 	font-size: 50px;
 	font-variant: small-caps;
 	text-align: center;
@@ -405,12 +397,10 @@ body{
 .heading1{
 	max-height: 125px;
 	-webkit-line-clamp: 4;
-	font-size: 17px;
 	line-height: 20px;
 	padding-bottom: 2px;
 	display: block;
 	display: -webkit-box;
-	max-height: 125;
 	margin: 0 auto;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
