@@ -7,27 +7,34 @@ function validateLogin(){
 	var b=document.getElementById('InputPassword').value;
 	var emailerror="*Please enter a valid email id";
 	var passworderror="*Please enter your password";
-	if(a === '')
+	var errors = false;
+	if(a==='' && b==='')
+	{
+		document.getElementById('emailvaliderror').innerHTML=emailerror;
+		document.getElementById('passwordvaliderror').innerHTML=passworderror;
+		document.getElementById('passwordvaliderror').style.visibility= "visible";
+		document.getElementById('emailvaliderror').style.visibility= "visible";
+		errors=true;
+	}
+	else if(a === '')
 	{
 		document.getElementById('emailvaliderror').innerHTML=emailerror;
 		document.getElementById('passwordvaliderror').style.visibility= "hidden";
 		document.getElementById('emailvaliderror').style.visibility= "visible";
+		errors=true;
 	}
 	else if(b===''){
 		document.getElementById('passwordvaliderror').innerHTML=passworderror;
 		document.getElementById('passwordvaliderror').style.visibility= "visible";
 		document.getElementById('emailvaliderror').style.visibility= "hidden";
-	}
-	else if(a==='' && b==='')
-	{
-		document.getElementById('emailvaliderror').innerHTML=emailerror;
-		document.getElementById('passwordvaliderror').innerHTML=passworderror;
-		document.getElementById('passwordvaliderror').style.visibility= "visible";
-		document.getElementById('emailvaliderror').style.visibility= "visible";
+		errors=true;
 	}
 	else{
 		document.getElementById('passwordvaliderror').style.visibility= "hidden";
 		document.getElementById('emailvaliderror').style.visibility= "hidden";
+	}
+	if(!errors) {
+		window.location.href='event_discription.html';
 	}
 }
 

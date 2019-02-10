@@ -4,13 +4,16 @@
 	<title>User Profile</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="../js/login.js"></script>
 </head>
 <body>
-	<!-- Image and text -->
+	<!-- Nav Bar content -->
+	<!--https://getbootstrap.com/docs/4.2/components/navs/-->
+	<!-- Modified the tab view and actions of each tab -->
 <div class="wrapper">	
 	<nav class=" boxtransition navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	  	<a class="navbar-brand" href="#"><img src="../images/images.png" width="60" height="40" class="d-inline-block align-top" alt="">
@@ -18,22 +21,25 @@
 		</a>
 		<a class="navbar-brand-icon" href="#"><img src="../images/images.png" width="40" height="30" class="d-inline-block align-top" alt="">
 		</a>
-		<a class="fab fa-searchengin nav-icon" href="#"></a>
-		<a class="fas fa-question-circle nav-icon" href="#"></a>
+		<a class="fab fa-searchengin nav-icon" href="event_discription.html"></a>
+		<a data-toggle="tab" class="fas fa-question-circle nav-icon" href="#aboutus"></a>
 
 	 	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  	</button> -->
 	  	<div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-		    <ul class="navbar-nav mt-2 mt-lg-0" >
-			 	<li class="nav-item">
-			    	<a class="nav-link" href="#">Browse Events</a>
+		    <ul class="navbar-nav mt-2 mt-lg-0 nav nav-tabs border-0" role="tablist">
+			 	<li>
+			    	<a data-toggle="tab" class="active nav-link" href="#details">Profile</a>
 			  	</li>
-			  	<li class="nav-item">
-			    	<a class="nav-link" href="#">Help</a>
+			  	<li>
+			    	<a class="nav-link" href="event_discription.html">Browse Events</a>
 			  	</li>
-			  	<li class="nav-item">
-			    	<a class="nav-link" href="#">About Us</a>
+			  	<li>
+			    	<a data-toggle="tab" class="nav-link" href="#help">Help</a>
+			  	</li>
+			  	<li>
+			    	<a data-toggle="tab" class="nav-link" href="#aboutus">About Us</a>
 			  	</li>
 			</ul>
 	  	</div>
@@ -47,14 +53,15 @@
 		              <a class="dropdown-item" href="User_profile.html">Profile</a>
 		              <a class="dropdown-item" href="#">Settings</a>
 		              <div class="dropdown-divider"></div>
-		              <a class="dropdown-item" href="#">Log out</a>
+		              <a class="dropdown-item" href="User_Login.html">Log out</a>
 		            </div>
 		        </li>
 		    </ul>
 		</div>
 	</nav>
 <!--body part-->
-	<div class="maindiv">
+<div class="tab-content">
+	<div class="maindiv tab-pane active" id="details">
 		<div class="row">
 			<div class="row">
 				<div class="col-sm-4 imgadjust">
@@ -64,43 +71,68 @@
 	  				</div> -->
 	  			</div>
 				<div class="col-sm-7 padleft">
-	  				<div class="h3">
+	  				<div class="h5">
 	  					<div class="general_information">
-	  						<span class="h4 general_information"> Personal Details</span>
+	  						<span class="h4 general_information text-info">Personal Details</span>
 	  					</div>
-	  					<div class="padding">
+	  					<div class="py-4">
 		  					<div class="info">
-		  						<span class="h4"> First Name : Anurag</span>
+		  						<span> First Name :&nbsp;&nbsp;</span><span class="font-weight-normal">Anurag</span>
 		  					</div>
 		  					<div class="info">
-		  						<span class="h4"> Last Name : Sreekumar</span>
+		  						<span> Last Name :&nbsp;&nbsp;</span><span class="font-weight-normal">Sreekumar</span>
 		  					</div>
 			  				<div class="info">
-			  					<span class="h4">&#160; &#160; &#160;&#160;Gender : Male</span>
+			  					<span>Gender :&nbsp;&nbsp;</span><span class="font-weight-normal">Male</span>
 			  				</div>
 			  				<div class="info">
-			  					<span class="h4">&#160; &#160; &#160; College : Dalhousie University</span>
+			  					<span>College :&nbsp;&nbsp;</span><span class="font-weight-normal">Dalhousie University</span>
 			  				</div>
 			  				<div class="info">
-			  					<span class="h4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DOB : 31-03-2018</span>
+			  					<span>DOB :&nbsp;&nbsp;</span><span class="font-weight-normal">31-03-2018</span>
 			  				</div>
 			  				<div class="info">
-			  					<span class="h4">&#160;&#160;&#160;&#160;&#160;&#160;Email Id : an123@gamil.com</span>
+			  					<span>Email Id :&nbsp;&nbsp;</span><span class="font-weight-normal">an123@gamil.com</span>
 			  				</div>
 		  				</div>
 	  				</div>
-	  				<div class="emptyimage">
 					<button type="button" id="editbtn" class="btn btn-success" style="width:10em; text-align: center;" onclick="load_profile_edit()">Edit</button>
-				</div>
 	  			</div>
 				
 			</div>
 		</div>
 	</div>
-		<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>	
-</div>
 	
-
+		<!-- Used Jumborto for dummy pages -->
+	<!-- https://getbootstrap.com/docs/4.2/components/jumbotron/ -->
+	<div class="tab-pane fade" id="browse">
+		<div class="jumbotron" style="min-height: 38.5em;">
+		  <h1 class="display-4">Coming Soon !! </h1>
+		  <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+		  <hr class="my-4">
+		  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="help">
+		<div class="jumbotron" style="min-height: 38.5em;">
+		  <h1 class="display-4">Coming Soon !! </h1>
+		  <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+		  <hr class="my-4">
+		  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="aboutus">
+		<div class="jumbotron" style="min-height: 38.5em;">
+		  <h1 class="display-4">Coming Soon !! </h1>
+		  <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+		  <hr class="my-4">
+		  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+	</div>
+	<!-- Used Jumborto for dummy pages ends -->
+	</div>
+	<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>	 
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
     <script src="../js/formvalidation_js.js"></script>
 </head>
 <body>
@@ -18,23 +19,26 @@
 		</a>
         <a class="navbar-brand-icon" href="#"><img src="../images/images.png" width="40" height="30" class="d-inline-block align-top" alt="">
         </a>
-        <a class="fab fa-searchengin nav-icon" href="#"></a>
-        <a class="fas fa-question-circle nav-icon" href="#"></a>
+        <a class="fab fa-searchengin nav-icon" href="event_discription.html"></a>
+        <a data-toggle="tab" class="fas fa-question-circle nav-icon" href="#aboutus"></a>
 	 	<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  	</button> -->
 	  	<div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-		    <ul class="navbar-nav mt-2 mt-lg-0" >
-			 	<li class="nav-item">
-			    	<a class="nav-link" href="#">Browse Events</a>
-			  	</li>
-			  	<li class="nav-item">
-			    	<a class="nav-link" href="#">Help</a>
-			  	</li>
-			  	<li class="nav-item">
-			    	<a class="nav-link" href="#">About Us</a>
-			  	</li>
-			</ul>
+		    <ul class="navbar-nav mt-2 mt-lg-0  nav nav-tabs border-0"  role="tablist">
+			 	<li>
+                    <a data-toggle="tab" class="active nav-link" href="#details">Profile</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="event_discription.html">Browse Events</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" class="nav-link" href="#help">Help</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" class="nav-link" href="#aboutus">About Us</a>
+                </li>			
+            </ul>
 	  	</div>
 	  	<div>
 	    <ul class="navbar-nav mt-2 mt-lg-0 bar-width">
@@ -46,105 +50,132 @@
 		              <a class="dropdown-item" href="User_profile.html">Profile</a>
 		              <a class="dropdown-item" href="#">Settings</a>
 		              <div class="dropdown-divider"></div>
-		              <a class="dropdown-item" href="#">Log out</a>
+		              <a class="dropdown-item" href="User_Login.html">Log out</a>
 		            </div>
 		        </li>
 		    </ul>
 		</div>
 	</nav>
-	<div class="maindiv padbottom">
-    <form id="profileedit" name="profile">
-    	<div class="general_edit">
-	  		<span class="h4 general_edit"> Profile </span>
-	  	</div>
-        <div class="row">
-            <div class="col-sm-5 container-forgot">
-                <div class="padding">
-                    <img src="../images/user.svg" style="width:40%;" class="border" alt="userimage" />
+    <div class="tab-content">
+    	<div class="maindiv padbottom tab-pane active" id="details">
+        <form id="profileedit" name="profile">
+        	<div class="general_edit">
+    	  		<span class="h4 general_edit"> Profile </span>
+    	  	</div>
+            <div class="row">
+                <div class="col-sm-5 container-forgot">
+                    <div class="padding">
+                        <img src="../images/user.svg" style="width:40%;" class="border" alt="userimage" />
+                    </div>
+                    <div>
+                        <input type="file" class="padimage" name="chooseimage"/>
+                    </div>
+                   
+                   <div class="container-forgot">
+                        <button type="button" class="btn socialfbbutton" onclick="load_profile()">
+                            <img class="socialimg" src="../images/fb.svg" alt="Facebook"><span class="h6 vm">Facebook</span></button>
+                        <button type="button" class="btn socialgmailbutton" onclick="load_profile()">
+                            <img class="socialimg" src="../images/gmail.svg" alt="Google"><span class="h6 vm">Google</span></button>
+                    </div>
                 </div>
-                <div>
-                    <input type="file" class="padimage" name="chooseimage"/>
-                </div>
-               
-               <div class="container-forgot">
-                    <button type="button" class="btn socialfbbutton" onclick="load_profile()">
-                        <img class="socialimg" src="../images/fb.svg" alt="Facebook"><span class="h6 vm">Facebook</span></button>
-                    <button type="button" class="btn socialgmailbutton" onclick="load_profile()">
-                        <img class="socialimg" src="../images/gmail.svg" alt="Google"><span class="h6 vm">Google</span></button>
+                <div class="col-md-5">
+                    <div>
+                        <label for="firstname">First Name</label><span class="description">*</span>
+                        <input type="text" id="firstname" class="form-control" name="firstname" onblur="validatefname()">
+                        <span id="errorfname"></span>
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name</label><span class="description">*</span>
+                        <input type="text" id="lastname" class="form-control" name="lastname" onblur="validatelname()">
+                        <span id="errorlname"></span>
+                    </div>
+                    <div>
+                        <label for="gender">Gender</label><span class="description">*</span>
+                        <select id="gender" class="form-control" onblur="validategender()">
+                            <option>Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                         <span id="errorgender"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email ID</label><span class="description">*</span>
+                        <input type="text" id="email" class="form-control" name="emailid" onblur="validatemail()">
+                        <span id="erroremail"></span>
+                    </div>
+                    <div>
+                        <label for="phone">Phone Number</label><span class="description">*</span>
+                        <input type="text" id="phone" class="form-control" name="phonenumber" maxlength="10" onblur="validatenum()">
+                        <span id="errornumber"></span>
+                    </div>
+                    <div>
+                        <label for="university">University</label><span class="description">*</span>
+                        <input type="text" id="university" class="form-control" name="university" onblur="validateuniv()">
+                        <span id="erroruniv"></span>
+                    </div>
+                    <div>
+                        <label for="branch">Branch</label><span class="description">*</span>
+                        <input type="text" id="branch" class="form-control" name="branch" onblur="validatebranch()">
+                        <span id="errorbranch"></span>
+                    </div>  
                 </div>
             </div>
-            <div class="col-md-5">
-                <div>
-                    <label for="firstname">First Name</label><span class="description">*</span>
-                    <input type="text" id="firstname" class="form-control" name="firstname" onblur="validatefname()">
-                    <span id="errorfname"></span>
-                </div>
-                <div>
-                    <label for="lastname">Last Name</label><span class="description">*</span>
-                    <input type="text" id="lastname" class="form-control" name="lastname" onblur="validatelname()">
-                    <span id="errorlname"></span>
-                </div>
-                <div>
-                    <label for="gender">Gender</label><span class="description">*</span>
-                    <select id="gender" class="form-control" onblur="validategender()">
-                        <option>Select</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                        <option>Prefer not to say</option>
-                    </select>
-                     <span id="errorgender"></span>
-                </div>
-                <div>
-                    <label for="email">Email ID</label><span class="description">*</span>
-                    <input type="text" id="email" class="form-control" name="emailid" onblur="validatemail()">
-                    <span id="erroremail"></span>
-                </div>
-                <div>
-                    <label for="phone">Phone Number</label><span class="description">*</span>
-                    <input type="text" id="phone" class="form-control" name="phonenumber" maxlength="10" onblur="validatenum()">
-                    <span id="errornumber"></span>
-                </div>
-                <div>
-                    <label for="university">University</label><span class="description">*</span>
-                    <input type="text" id="university" class="form-control" name="university" onblur="validateuniv()">
-                    <span id="erroruniv"></span>
-                </div>
-                <div>
-                    <label for="branch">Branch</label><span class="description">*</span>
-                    <input type="text" id="branch" class="form-control" name="branch" onblur="validatebranch()">
-                    <span id="errorbranch"></span>
-                </div>  
+            <div class="padding container-forgot">
+                <button type="button" class="btn btn-success" id="submitbutton" style="width: 10em;" onclick="validateForm()">Save</button>
             </div>
-        </div>
-        <div class="padding container-forgot">
-            <button type="button" class="btn btn-success" id="submitbutton" style="width: 10em;" onclick="validateForm()">Save</button>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="SuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Your information has been successfully.
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+            <!-- Modal -->
+            <div class="modal fade" id="SuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Your information has been successfully saved.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+        </form>
         </div>
-    </form>
+        <!-- Used Jumborto for dummy pages -->
+        <!-- https://getbootstrap.com/docs/4.2/components/jumbotron/ -->
+        <div class="tab-pane fade" id="browse">
+            <div class="jumbotron" style="min-height: 39em;">
+              <h1 class="display-4">Coming Soon !! </h1>
+              <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+              <hr class="my-4">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="help">
+            <div class="jumbotron" style="min-height: 39em;">
+              <h1 class="display-4">Coming Soon !! </h1>
+              <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+              <hr class="my-4">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="aboutus">
+            <div class="jumbotron" style="min-height: 39em;">
+              <h1 class="display-4">Coming Soon !! </h1>
+              <p class="lead">We are working very hard on the new version of our site. It will bring a lot of new features. Stay tuned!</p>
+              <hr class="my-4">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+        <!-- Used Jumborto for dummy pages ends -->
     </div>
-	<div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>    
+    <div class="footer_style" > © Copyright 2019 EventHub  | <a href="#">Contact us </a> </div>    
 </div>
-
-	
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

@@ -143,14 +143,8 @@ body{
   .priceview{
   	display: inline-block;
   }
-  .cardright{
-  	display: none;
-  }
   .priceviewincard{
   	display: none;
-  }
-  .infohider{
-  	display: inline-block;
   }
   .btnposition{
  	 width: 70%;
@@ -172,14 +166,8 @@ body{
   .priceview{
   	display: none;
   }
-  .cardright{
-  	display: inline-block;
-  }
   .priceviewincard{
   	display: inline-block;
-  }
-  .infohider{
-  	display: none;
   }
 }
 
@@ -197,11 +185,11 @@ body{
 }
 
 .general_information{
-	font-family: "Time New Roman";
+	font-family: "Open Sans";
+	font-style: italic;
 	font-size: 1.25em;
 	font-weight: bold;
 	text-align: left;
-	color: #d81717;
 	width: 320px;
 	margin-top: 8%;
 }
@@ -214,16 +202,12 @@ body{
 
 .info{
 	padding-top: 0.5em;
+	padding-bottom: 10px;
 }
 
 .padding{
 	padding: 1em;
 }
-
-.emptyimage{
-	margin-left: 4.5em;
-}
-
 .padleft{
 	padding-left: 3em;
 	margin-bottom: 5em;
@@ -431,6 +415,12 @@ body{
 .navbar .nav-icon, .navbar-brand-icon {
 	display: none;
 }
+
+.cardright .fa-user-circle {
+		    font-size: 84px;
+		}
+
+
 @media only screen and (max-width: 991px) {
 .navbar .nav-icon {
 	font-size: 30px;
@@ -449,6 +439,12 @@ body{
 .fab  {
     border-right: 1px solid #7e7373;
 }
+.cardright .title {
+			font-size: 12px;
+		}
+.author-desc {
+	text-align: center !important;
+}
 }
 
 @media only screen and (min-width: 150px) {
@@ -456,4 +452,16 @@ body{
 .btnposition{
  	 width: 70%;
 }
+.dropdown-menu{
+	position: absolute !important;
+}
+ .nav-link{
+ 	background-color:transparent !important;
+ }
+}
+
+@media only screen and (max-width: 991px) {
+/*    .dropdown-menu-right1{
+  	right: auto !important;
+  }*/
 }
